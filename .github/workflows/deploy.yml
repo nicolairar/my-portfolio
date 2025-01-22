@@ -21,6 +21,9 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: Check for Output Directory
+      run: ls -la out
+
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
