@@ -3,6 +3,13 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
+interface Project {
+    title: string;
+    description: string;
+    tech: string[];
+    link: string;
+  }
+
 const projects = [
   {
     title: "Project One",
@@ -46,7 +53,7 @@ export default function Projects() {
   )
 }
 
-function ProjectCard({ project, index }: { project: any; index: number }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
