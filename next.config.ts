@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  reactStrictMode: true,
   images: {
-    unoptimized: true,
+    unoptimized: process.env.NEXT_PUBLIC_ENV === 'production'
   },
+  output: process.env.NEXT_PUBLIC_ENV === 'production' ? 'export' : 'standalone'
 }
 
 export default nextConfig
-
