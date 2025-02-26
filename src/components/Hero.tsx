@@ -1,5 +1,5 @@
-'use client'
-import { motion } from 'framer-motion'
+"use client";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -12,8 +12,14 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-          Hi, I&apos;m <span className="text-blue-600">Nicolai</span>
+            Hi, I&apos;m <span className="text-blue-600">Nicolai</span>
           </h1>
+          <iframe
+            src="https://radio.nicolairar.it/public/nico/embed?theme=dark"
+            frameBorder="0"
+            allowTransparency={true}
+            style={{ width: "100%", minHeight: "150px", border: "0" }}
+          ></iframe>
           <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
             Front-End Engineer & IT Passionate
           </p>
@@ -55,5 +61,5 @@ export default function Hero() {
         </svg>
       </motion.div>
     </section>
-  )
+  );
 }
