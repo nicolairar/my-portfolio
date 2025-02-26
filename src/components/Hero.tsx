@@ -2,15 +2,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
+
 export default function Hero() {
-  const iframeRef = useRef(null);
-
-  useEffect(() => {
-    if (iframeRef.current) {
-      iframeRef.current.src = "https://radio.nicolairar.it/public/nico/embed?theme=dark&autoplay=1";
-    }
-  }, []);
-
   return (
     <section className="h-screen flex items-center justify-center relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,9 +16,7 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
             Hi, I&apos;m <span className="text-blue-600">Nicolai</span>
           </h1>
-          {/* Iframe con ref */}
           <iframe
-            ref={iframeRef}
             src="https://radio.nicolairar.it/public/nico/embed?theme=dark"
             frameBorder="0"
             allowTransparency={true}
