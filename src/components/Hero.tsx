@@ -51,8 +51,9 @@ export default function Hero() {
           ></iframe>
 
           <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-            There is no cloud, it's just someone else's computer
+            There is no cloud, it&apos;s just someone else&apos;s computer
           </p>
+
           <div className="flex justify-center space-x-4">
             <motion.a
               href="#projects"
