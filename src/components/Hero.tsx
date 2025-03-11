@@ -1,5 +1,32 @@
 "use client";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+interface TypewriterProps {
+  text: string;
+  speed?: number;
+}
+
+function Typewriter({ text, speed = 150 }: TypewriterProps) {
+  const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      const nextChar = text.charAt(index);
+      if (nextChar) {
+        setDisplayedText((prev) => prev + nextChar);
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [text, speed]);
+
+  return <span>{displayedText}</span>;
+}
 
 export default function Hero() {
   return (
@@ -12,16 +39,19 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-            Hi, I&apos;m <span className="text-blue-600">Nicolai</span>
+            Hi, I&apos;m{" "}
+            <span className="text-blue-600">
+              <Typewriter text="Nicolai" speed={300} />
+            </span>
           </h1>
           <iframe
             src="https://radio.nicolairar.it/public/nico/embed?theme=dark"
             frameBorder="0"
-            allowTransparency={true}
             style={{ width: "100%", minHeight: "150px", border: "0" }}
           ></iframe>
+
           <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-            Front-End Engineer & IT Passionate
+            There is no cloud, it's just someone else's computer
           </p>
           <div className="flex justify-center space-x-4">
             <motion.a
